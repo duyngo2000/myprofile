@@ -11,6 +11,7 @@ const Input = styled.input`
   border: none;
   opacity: 0;
   cursor: context-menu;
+  -webkit-user-modify: read-only;
 `
 const HideInput = ({ id }) => {
   return <Input id={id} readonly="True" />
