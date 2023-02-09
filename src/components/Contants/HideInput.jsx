@@ -13,7 +13,7 @@ const Input = styled.input`
   cursor: context-menu;
 `
 const HideInput = ({ id }) => {
-  return <Input id={id} />
+  return <Input id={id} readonly="True" />
 }
 
 export default HideInput
