@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   color: rgb(255, 255, 255);
   height: ${(prop) => (prop.heightHeader === 1 ? "60px" : "100px")};
   background-color: ${(prop) =>
-    prop.heightHeader === 1 ? "#f42a4c" : "transparent"};
+    prop.heightHeader === 1 ? "#717086" : "transparent"};
   box-shadow: ${(prop) =>
     prop.heightHeader === 1 ? "2px 2px 2px #505454" : "none"};
   display: flex;
@@ -119,9 +119,11 @@ const Item = styled.li`
     text-align: right;
   }
 `
-const Label = styled.label`
+const LinkItem = styled.a`
   padding: 6px 10px;
   border-radius: 16px;
+  text-decoration: none;
+  color: unset;
   :hover {
     cursor: pointer;
   }
@@ -130,28 +132,28 @@ const Label = styled.label`
 const linkMenu = [
   {
     name: "Summary",
-    for: "summary",
+    href: "#summary",
   },
   {
     name: "About",
-    for: "about",
+    href: "#about",
   },
   {
     name: "Education",
-    for: "education",
+    href: "#education",
   },
   {
     name: "Skills",
-    for: "skills",
+    href: "#skills",
   },
 
   {
     name: "Experiences",
-    for: "workexperiences",
+    href: "#workexperiences",
   },
   {
     name: "Contact",
-    for: "contact",
+    href: "#contact",
   },
 ]
 const Header = ({
@@ -217,15 +219,16 @@ const Header = ({
   ])
   // console.log("hei", heightHeader)
   useEffect(() => {
-    window.onscroll = function () {
-      // console.log("window.scrollY", window.scrollY)
+    const onScroll = () => {
       if (window.scrollY >= window.screen.availHeight / 2) {
         setHeighHeader(1)
-        // console.log("100vhhhhhhhhhhhhhhhhhhhhhhh")
       } else {
         setHeighHeader(0)
       }
     }
+    window.removeEventListener("scroll", onScroll)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
   return (
@@ -235,7 +238,23 @@ const Header = ({
         <WrapperLogo>
           <Logo>My Profile</Logo>
         </WrapperLogo>
+
         <WrapperMenu>
+          <Menu>
+            {linkMenu.map((item) => (
+              <Item
+                key={item.name}
+                id={item.name}
+                nameItem={item.name}
+                nameClick={clickGetNameItem}
+                onClick={() => handleItem(item.name)}
+              >
+                <LinkItem href={item.href}>{item.name}</LinkItem>{" "}
+              </Item>
+            ))}
+          </Menu>
+        </WrapperMenu>
+        {/* <WrapperMenu>
           <Menu>
             {linkMenu.map((item) => (
               <Item
@@ -249,7 +268,7 @@ const Header = ({
               </Item>
             ))}
           </Menu>
-        </WrapperMenu>
+        </WrapperMenu> */}
       </Wrapper>
     </Container>
   )

@@ -64,7 +64,7 @@ function App() {
       />
       <Summary getOffsetTopSummary={getOffsetTopSummary} />
       <AboutMe getOffsetTopAboutMe={getOffsetTopAboutMe} />
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<p style={{ "margin": "10px" }}>Loading map...</p>}>
         <Education getOffsetTopEducation={getOffsetTopEducation} />
       </Suspense>
       <Skills getOffsetTopSkills={getOffsetTopSkills} />

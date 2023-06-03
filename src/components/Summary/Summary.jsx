@@ -5,7 +5,7 @@ import laugh from "../../img/laugh4.jpg"
 import Typed from "react-typed"
 import HideInput from "../Contants/HideInput"
 import { moblie } from "../Contants/sizeScreen"
-import Resume from "../../img/Ngo-Nhat-Duy-06-09-00-TopCV.pdf"
+import Resume from "../../img/Ngo-Nhat-Duy.pdf"
 
 const Container = styled.div`
   position: relative;
@@ -57,6 +57,7 @@ const Button = styled.button`
   font-size: 14px;
   border: 1px solid #ccc;
   outline: none;
+  border-radius: 4px;
 
   transition: 0.5s;
 
@@ -141,7 +142,7 @@ const Summary = ({ getOffsetTopSummary }) => {
           <Position>I'm a Web Developer</Position>
         </Title>
         <Button>
-          <LinkButton href={Resume} download="MyCV">
+          <LinkButton href={Resume} download="Ngô Nhật Duy">
             Download my CV
           </LinkButton>
         </Button>

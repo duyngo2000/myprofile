@@ -41,6 +41,7 @@ const WrapperImage = styled.div`
 const Image = styled.img`
   width: 25vw;
   height: 60vh;
+  border-radius: 8px;
   @media screen and (max-width: ${moblie}) {
     width: 100%;
     height: 100%;
@@ -74,7 +75,7 @@ const Content = styled.p`
   padding: 0 20px;
   color: #fff;
   line-height: 1.3rem;
-  font-size: 18px;
+  font-size: 16px;
 `
 const Highlight = styled.span`
   color: #f42a4c;

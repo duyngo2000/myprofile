@@ -173,7 +173,7 @@ const linkFollow = [
     marginLeft: "50px",
   },
   {
-    name: "0769757250",
+    name: "0769 757 250",
     icon: <PhoneEnabledOutlined style={styleIcon} />,
     link: "Facebook",
     marginLeft: "100px",
@@ -211,7 +211,7 @@ const Contact = ({ getOffsetTopContact }) => {
           <Form data-aos="fade-right">
             <Input placeholder="Your Name" row="1/2" column="1/3" />
             <Input placeholder="Your Email" row="1/2" column="3/5" />
-            <TextArea placeholder="Your Massage" row="2/5" column="1/5" />
+            <TextArea placeholder="Your Message" row="2/5" column="1/5" />
             <Button type="submit" row="5/6" column="4/5">
               Send
             </Button>
